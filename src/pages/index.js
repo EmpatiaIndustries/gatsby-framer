@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/index.css";
+import { motion } from "framer-motion";
 import { Layout, Menu, Card, Row, Col } from "antd";
 import {
   DesktopOutlined,
@@ -58,7 +59,12 @@ function Index() {
             <Col span={8} offset={8}>
               {arrayPost.map((index) => {
                 return (
-                  <div
+                  <motion.div
+                    whileTap={{ rotateX: 360, scale: 1.0 }}
+                    whileHover={{
+                      scale: 1.2,
+                      boxShadow: "0px 0px 8px rgb(0,0,0)",
+                    }}
                     key={index}
                     style={{ textAlign: "center" }}
                     className="site-card-border-less-wrapper"
@@ -75,7 +81,7 @@ function Index() {
                       <p>Card content</p>
                       <p>Card content</p>
                     </Card>
-                  </div>
+                  </motion.div>
                 );
               })}
             </Col>
